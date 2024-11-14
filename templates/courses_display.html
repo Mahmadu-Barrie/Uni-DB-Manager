@@ -1,0 +1,33 @@
+{% extends 'simple_layout.html' %}
+
+{% block title %}Courses{% endblock %}
+
+{% block content %}
+    <h1>Courses</h1>
+    <table id="courses-table" class="display">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Title</th>
+                <th>Credits</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for course in data %}
+                <tr>
+                    <td>{{ course.id }}</td>
+                    <td>{{ course.title }}</td>
+                    <td>{{ course.credits }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <script src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.min.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            $('#courses-table').DataTable();
+        });
+    </script>
+{% endblock %}

@@ -1,0 +1,22 @@
+{% extends 'simple_layout.html' %}
+
+{% block title %}Insert Course{% endblock %}
+
+{% block content %}
+    <h1>Insert Course</h1>
+    <form method="post">
+        {{ form.csrf_token }}
+        <div>
+            {{ form.title.label }} {{ form.title(size=20) }}
+        </div>
+        <div>
+            {{ form.credits.label }} {{ form.credits(size=5) }}
+        </div>
+        <div>
+            {{ form.professor.label }} {{ form.professor() }}
+        </div>
+        <div>
+            <input type="submit" value="Submit">
+        </div>
+    </form>
+{% endblock %}

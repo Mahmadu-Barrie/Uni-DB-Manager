@@ -1,0 +1,24 @@
+{% extends 'datatable_layout.html' %}
+
+{% block header %}Students DataTable{% endblock %}
+
+{% block content %}
+    <table id="datatable" class="display">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Major</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for student in data %}
+                <tr>
+                    <td>{{ student.id }}</td>
+                    <td>{{ student.name }}</td>
+                    <td>{{ student.major }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

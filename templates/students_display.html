@@ -1,0 +1,21 @@
+{% extends 'simple_layout.html' %}
+
+{% block title %}Students{% endblock %}
+
+{% block content %}
+    <h1>Students</h1>
+    <table border="1">
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Major</th>
+        </tr>
+        {% for student in data %}
+            <tr>
+                <td>{{ student.id }}</td>
+                <td>{{ student.name }}</td>
+                <td>{{ student.major }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+{% endblock %}
